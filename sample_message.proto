@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package bufSample;
+
+import "type/sample_basic_message.proto";
+import "google/protobuf/timestamp.proto";
+
+// 작업 상태
+enum Status {
+    TASK_STATUS_UNSPECIFIED = 0;    //UNSPECIFIED
+    TASK_STATUS_READY = 1;          //Task State READY
+    TASK_STATUS_RUNNING = 2;        //Task State RUNNING
+    TASK_STATUS_PENDING = 3;        //Task State PENDING
+    TASK_STATUS_COMPLETE = 4;       //Task State COMPLETE
+    TASK_STATUS_SUCCESS = 5;        //Task State SUCCESS
+    TASK_STATUS_FAILED = 6;         //Task State FAILED
+    TASK_STATUS_CANCELED = 7;       //Task State CANCELED
+}
+
+message GetInfo {
+    string id = 1;
+}
+
+// 작업 스케줄 주문 목록 조회
+message OrderInfo {
+    string id = 1;
+    string name = 2;
+    Status status = 3;
+    repeated string target_id = 4;
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
+    google.protobuf.Timestamp resulted_at = 7;
+}

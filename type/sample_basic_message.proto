@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+// 공용으로 사용하는 메세지들을 정의하는 패키지
+package type;
+
+// 어느 서비스에서 요청한 API인지를 정의하는 enum
+// Unspecified request
+// Request from Debug API
+// Request from Open API
+enum RequestNode {
+    REQUEST_NODE_UNSPECIFIED = 0;
+    REQUEST_NODE_DEBUG_API = 1;
+    REQUEST_NODE_OPEN_API = 2;
+    // Request from Web Application
+    REQUEST_NODE_WEB_FRONT = 3;
+    // Request from Service 1
+    REQUEST_NODE_ONE = 4;
+    // Request from Service 2
+    REQUEST_NODE_TWO = 5;
+    // Request from Service 3
+    REQUEST_NODE_THREE = 6;
+    // Request from Custom interface
+    REQUEST_NODE_CUSTOM = 7;
+}
+
+/* Request, Response에서 공용으로 사용하는 Header
+ * Service Version*/
+message Header {
+    string version = 1;
+    repeated string to_ids = 2;
+    // Requester
+    RequestNode from_id = 3;
+    // User Web ClientID
+    string requester_id = 4;
+}
+
+// Body없이 Header만 포함
+message WithoutBody {
+    Header header = 1; // Standard
+    Error error = 2;
+}
+
+// Standard Error Message
+message Error {
+    int32 status = 1;       // Fail : -1, Success : 0, Delay : 1
+    int32 code = 2;         // Error Code
+    string name = 3;        // Error Name
+    string reason = 4;      // Error Message
+    string description = 5; // Error Description
+    string service_name = 6; // Service Name
+}
