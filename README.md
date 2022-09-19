@@ -10,9 +10,9 @@
     |--- sample                              |--- core (Domain Group)
     |   ㅏ--- v1                 --->         |   ㅏ--- Sample(Domain Service) 
     |--- type (Common)                       |   |   ㅏ--- v1
-    |   ㅏ--- 1                              |   |   |   ㅏ--- Sample_One(Micro Service)
-    |                           TODO         |   |   |    |    ㅏ--- Sample_Two(Micro Service)
-    |                                        |   |   |    ㅏ--- Sample_Three(Micro Service)
+    |   ㅏ--- 1                               |   |   |   ㅏ--- Sample_One(Micro Service)
+    |                           TODO         |   |   |   ㅏ--- Sample_Two(Micro Service)
+    |                                        |   |   |   ㅏ--- Sample_Three(Micro Service)
     |                                        |--- Common (Common)
     |                                        |   ㅏ--- v1
     |                           --->         |
