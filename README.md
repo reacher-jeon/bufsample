@@ -6,17 +6,17 @@
 **현재는 예제 작성을 위해 직관적으로 생성하였지만, 추후 아래의 형식으로 크게는 도메인 그룹 안에 도메인 서비스 -> 마이크로 서비스로 각 서비스 별로 사용되는 
 데이터로만 구성 예정**
 
-    |                                        |
-    |--- sample                              |--- core (Domain Group)
-    |   ㅏ--- v1                 --->         |   ㅏ--- Sample(Domain Service) 
-    |--- type (Common)                       |   |   ㅏ--- v1
-    |   ㅏ--- 1                               |   |   |   ㅏ--- Sample_One(Micro Service)
-    |                           TODO         |   |   |   ㅏ--- Sample_Two(Micro Service)
-    |                                        |   |   |   ㅏ--- Sample_Three(Micro Service)
-    |                                        |--- Common (Common)
-    |                                        |   ㅏ--- v1
-    |                           --->         |
-    |                                        |
+    │                                        │
+    ├─── sample                              ├─── core (Domain Group)
+    │   ├─── v1                 --->         │   ├─── Sample(Domain Service) 
+    ├─── type (Common)                       │   │   ├─── v1
+    │   ├─── 1                               │   │   │   ├─── Sample_One(Micro Service)
+    │                           TODO         │   │   │   ├─── Sample_Two(Micro Service)
+    │                                        │   │   │   ├─── Sample_Three(Micro Service)
+    │                                        │─── Common (Common)
+    │                                        │   ├--- v1
+    │                           --->         │
+    │                                        │
      
 
 ---
