@@ -1,45 +1,29 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+## gRPC  Protocol Buffer file Create Example
+**본 자료는 gRPC에 대한 예제로서 protoBuffer 명령어를 직접 사용하는 것이 아닌 Buf.Build 스키마 레지스트리 플랫폼을 이용하였습니다.**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+---
+## Directory Structure
+**현재는 예제 작성을 위해 직관적으로 생성하였지만, 추후 아래의 형식으로 크게는 도메인 그룹 안에 도메인 서비스 -> 마이크로 서비스로 각 서비스 별로 사용되는 
+데이터로만 구성 예정**
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+    |                                        |
+    |--- sample                              |--- core (Domain Group)
+    |   ㅏ--- v1                 --->         |   ㅏ--- Sample(Domain Service) 
+    |--- type (Common)                       |   |   ㅏ--- v1
+    |   ㅏ--- 1                              |   |   |   ㅏ--- Sample_One(Micro Service)
+    |                           TODO         |   |   |    |    ㅏ--- Sample_Two(Micro Service)
+    |                                        |   |   |    ㅏ--- Sample_Three(Micro Service)
+    |                                        |--- Common (Common)
+    |                                        |   ㅏ--- v1
+    |                           --->         |
+    |                                        |
+     
 
 ---
 
-## Edit a file
+## Create Command
+**아래에 명시된 명령어를 수행 위 디렉토리 구조에 맞게 PB 파일을 생성한다.**
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+    command : buf generate
 
 ---
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
-
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).

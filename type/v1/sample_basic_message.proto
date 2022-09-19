@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 // 공용으로 사용하는 메세지들을 정의하는 패키지
-package type;
+package type.v1;
 
 // 어느 서비스에서 요청한 API인지를 정의하는 enum
 // Unspecified request

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package bufSample;
+package sample.v1;
 
-import "type/sample_basic_message.proto";
+import "type/v1/sample_basic_message.proto";
 import "google/protobuf/timestamp.proto";
 
 // 작업 상태
